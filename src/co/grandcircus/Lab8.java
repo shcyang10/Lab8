@@ -44,19 +44,23 @@ public class Lab8 {
 				System.out.println("What would you like to know about " + studentName[index]
 						+ "? (enter \"hometown\" or \"favorite food\"): ");
 				String nextChoice = scan.nextLine();
+				int check1 = 0;
+				do {
 				if (nextChoice.equalsIgnoreCase("hometown")) {
 					System.out.println(studentName[index] + " is from " + hometown[index] + ".");
 				} else if (nextChoice.equalsIgnoreCase("favorite food")) {
 					System.out.println(studentName[index] + " favorite food is " + favoriteFood[index] + ".");
 				} else {
 					System.out.println(
-							"That data does not exist. Please try again. (enter \"hometown\" or \"favorite food\"): ");
-					continue;
+							"That data does not exist. Please try again. (enter \"hometown\" or \"favorite food\" or \"exit\": ");
+					more = scan.nextLine();
+						if(more.startsWith("e"));
+						System.out.println("Goodbye!");
+					break;
 				}
-				// the make sure it loops back once
-				int check1 = 0;
+				
 
-				do {
+				
 					System.out.println("Would you like to know more? (enter\"yes\" or \"no\"): ");
 					more = scan.nextLine();
 
@@ -71,6 +75,8 @@ public class Lab8 {
 					} else if (!more.equalsIgnoreCase("yes") || (!more.equalsIgnoreCase("no"))) {
 						System.out.println("Incorrect input! Please enter \"yes\" or \"no\"): ");
 						continue;
+					}else {
+						
 					}
 
 				} while (check1 != 1);
